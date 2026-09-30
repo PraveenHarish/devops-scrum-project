@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevOps Deployment Hub</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span>⚡</span> DevOpsHub
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#pipeline">Pipeline</a>
+            <a href="#technologies">Technologies</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <a href="/health" class="nav-button">System Status</a>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🚀 CI/CD Deployment Platform
+            </div>
+
+            <h1>
+                Build.
+                <span>Test.</span>
+                Deploy.
+            </h1>
+
+            <p>
+                A sample DevOps web application demonstrating
+                Git, GitHub, CI/CD automation, cloud deployment,
+                and microservices architecture.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#pipeline" class="primary-button">
+                    Explore Pipeline →
+                </a>
+
+                <a href="#technologies" class="secondary-button">
+                    View Technologies
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-card">
+
+            <div class="terminal-top">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="terminal">
+
+                <p><span class="green">$</span> git push origin main</p>
+
+                <p class="success">
+                    ✓ Code pushed successfully
+                </p>
+
+                <p><span class="green">$</span> github-actions run</p>
+
+                <p class="success">
+                    ✓ Build completed
+                </p>
+
+                <p class="success">
+                    ✓ Tests passed
+                </p>
+
+                <p class="success">
+                    ✓ Deployment successful
+                </p>
+
+                <p>
+                    <span class="green">→</span>
+                    Application is live
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Statistics -->
+    <section class="stats">
+
+        <div class="stat">
+            <h2>100%</h2>
+            <p>Automated Testing</p>
+        </div>
+
+        <div class="stat">
+            <h2>CI/CD</h2>
+            <p>Continuous Deployment</p>
+        </div>
+
+        <div class="stat">
+            <h2>Git</h2>
+            <p>Version Control</p>
+        </div>
+
+        <div class="stat">
+            <h2>Cloud</h2>
+            <p>Deployment Ready</p>
+        </div>
+
+    </section>
+
+
+    <!-- Pipeline -->
+    <section class="section" id="pipeline">
+
+        <div class="section-heading">
+
+            <div class="small-title">
+                DEVELOPMENT WORKFLOW
+            </div>
+
+            <h2>
+                From Code to <span>Production</span>
+            </h2>
+
+            <p>
+                Our deployment pipeline automates the software
+                development lifecycle from source code to production.
+            </p>
+
+        </div>
+
+
+        <div class="pipeline">
+
+            <div class="pipeline-card">
+
+                <div class="icon">01</div>
+
+                <h3>Git</h3>
+
+                <p>
+                    Track source code changes using Git version control.
+                </p>
+
+            </div>
+
+
+            <div class="arrow">→</div>
+
+
+            <div class="pipeline-card">
+
+                <div class="icon">02</div>
+
+                <h3>GitHub</h3>
+
+                <p>
+                    Manage repositories, branches and pull requests.
+                </p>
+
+            </div>
+
+
+            <div class="arrow">→</div>
+
+
+            <div class="pipeline-card">
+
+                <div class="icon">03</div>
+
+                <h3>CI/CD</h3>
+
+                <p>
+                    Automatically build and test every code change.
+                </p>
+
+            </div>
+
+
+            <div class="arrow">→</div>
+
+
+            <div class="pipeline-card">
+
+                <div class="icon">04</div>
+
+                <h3>Cloud</h3>
+
+                <p>
+                    Deploy the tested application to the cloud.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Technologies -->
+    <section class="section technologies" id="technologies">
+
+        <div class="section-heading">
+
+            <div class="small-title">
+                TECHNOLOGY STACK
+            </div>
+
+            <h2>
+                Tools Used in the <span>Pipeline</span>
+            </h2>
+
+        </div>
+
+
+        <div class="tech-grid">
+
+            <div class="tech-card">
+                <div class="tech-icon">🔧</div>
+                <h3>Git</h3>
+                <p>Distributed version control system.</p>
+            </div>
+
+
+            <div class="tech-card">
+                <div class="tech-icon">🐙</div>
+                <h3>GitHub</h3>
+                <p>Repository and collaboration platform.</p>
+            </div>
+
+
+            <div class="tech-card">
+                <div class="tech-icon">⚙️</div>
+                <h3>GitHub Actions</h3>
+                <p>Automated CI/CD workflows.</p>
+            </div>
+
+
+            <div class="tech-card">
+                <div class="tech-icon">🐍</div>
+                <h3>Python Flask</h3>
+                <p>Lightweight web application framework.</p>
+            </div>
+
+
+            <div class="tech-card">
+                <div class="tech-icon">☁️</div>
+                <h3>Cloud</h3>
+                <p>Application hosting and deployment.</p>
+            </div>
+
+
+            <div class="tech-card">
+                <div class="tech-icon">🧩</div>
+                <h3>Microservices</h3>
+                <p>Independent and scalable applications.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Microservices -->
+    <section class="section architecture">
+
+        <div class="section-heading">
+
+            <div class="small-title">
+                FUTURE ARCHITECTURE
+            </div>
+
+            <h2>
+                From Monolith to <span>Microservices</span>
+            </h2>
+
+            <p>
+                The application can later be divided into
+                independent services for better scalability and maintenance.
+            </p>
+
+        </div>
+
+
+        <div class="architecture-box">
+
+            <div class="service">
+                <div class="service-icon">👤</div>
+                <h3>User Service</h3>
+                <p>Handles user-related operations.</p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">📦</div>
+                <h3>Product Service</h3>
+                <p>Manages product information.</p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">🛒</div>
+                <h3>Order Service</h3>
+                <p>Processes application orders.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="section about" id="about">
+
+        <div class="about-content">
+
+            <div>
+
+                <div class="small-title">
+                    ABOUT THE PROJECT
+                </div>
+
+                <h2>
+                    Demonstrating Modern
+                    <span>DevOps Practices</span>
+                </h2>
+
+            </div>
+
+            <p>
+                This project demonstrates how DevOps practices can
+                improve software development by combining version control,
+                collaboration, automated testing, continuous integration,
+                continuous deployment and cloud technologies.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-logo">
+            ⚡ DevOpsHub
+        </div>
+
+        <p>
+            Agile Project Development with Scrum
+        </p>
+
+        <p class="copyright">
+            © 2026 DevOps Deployment Project
+        </p>
+
+    </footer>
+<!-- Response Section -->
+
+<section class="response-section" id="response">
+
+    <div class="section-heading">
+
+        <div class="small-title">
+            GET IN TOUCH
+        </div>
+
+        <h2>
+            Submit Your <span>Response</span>
+        </h2>
+
+        <p>
+            Submit your feedback or response about our
+            DevOps deployment project.
+        </p>
+
+    </div>
+
+
+    <div class="response-container">
+
+        <form action="/submit" method="POST">
+
+            <div class="form-group">
+
+                <label for="name">Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">Your Response</label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Enter your response..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button type="submit" class="submit-button">
+                Submit Response →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+</body>
+
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Stored Responses</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+
+    <style>
+
+        /* =================================
+           RESPONSE TABLE
+        ================================= */
+
+        .response-table-container {
+
+            width: 100%;
+
+            max-width: 1250px;
+
+            margin: 0 auto;
+
+            overflow-x: auto;
+
+            border-radius: 18px;
+
+            border: 1px solid #1e293b;
+
+            background: #0f172a;
+        }
+
+
+        .response-table {
+
+            width: 100%;
+
+            min-width: 850px;
+
+            border-collapse: collapse;
+        }
+
+
+        .response-table th {
+
+            padding: 20px;
+
+            background: #172554;
+
+            color: white;
+
+            font-size: 15px;
+
+            text-align: left;
+
+            white-space: nowrap;
+        }
+
+
+        .response-table td {
+
+            padding: 18px 20px;
+
+            color: #e2e8f0;
+
+            border-top: 1px solid #1e293b;
+
+            vertical-align: middle;
+        }
+
+
+        .response-table tbody tr {
+
+            transition: 0.2s;
+        }
+
+
+        .response-table tbody tr:hover {
+
+            background: #111c32;
+        }
+
+
+        /* =================================
+           DELETE BUTTON
+        ================================= */
+
+        .delete-button {
+
+            border: none;
+
+            background: #dc2626;
+
+            color: white;
+
+            padding: 9px 15px;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .delete-button:hover {
+
+            background: #b91c1c;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =================================
+           DELETE ALL BUTTON
+        ================================= */
+
+        .delete-all-button {
+
+            border: 1px solid #7f1d1d;
+
+            background: transparent;
+
+            color: #f87171;
+
+            padding: 12px 20px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .delete-all-button:hover {
+
+            background: #7f1d1d;
+
+            color: white;
+        }
+
+
+        /* =================================
+           EMPTY MESSAGE
+        ================================= */
+
+        .empty-message {
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            color: #64748b;
+
+            font-size: 17px;
+        }
+
+
+        /* =================================
+           ACTIONS
+        ================================= */
+
+        .response-actions {
+
+            max-width: 1250px;
+
+            margin: 30px auto 0;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* =================================
+           ID COLUMN
+        ================================= */
+
+        .serial-number {
+
+            font-weight: bold;
+
+            color: #38bdf8;
+
+            font-size: 16px;
+        }
+
+
+        /* =================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 600px) {
+
+            .response-actions {
+
+                flex-direction: column;
+            }
+
+            .response-actions a,
+            .response-actions form {
+
+                width: 100%;
+            }
+
+            .response-actions button,
+            .response-actions a {
+
+                width: 100%;
+
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         STORED RESPONSES
+    ================================= -->
+
+    <section class="section">
+
+
+        <!-- PAGE HEADING -->
+
+        <div class="section-heading">
+
+            <div class="small-title">
+                DATABASE
+            </div>
+
+
+            <h2>
+
+                Stored <span>Responses</span>
+
+            </h2>
+
+
+            <p>
+
+                Responses submitted through the website.
+
+            </p>
+
+        </div>
+
+
+
+        {% if responses %}
+
+
+        <!-- =================================
+             RESPONSE TABLE
+        ================================= -->
+
+        <div class="response-table-container">
+
+
+            <table class="response-table">
+
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ID
+                        </th>
+
+
+                        <th>
+                            Name
+                        </th>
+
+
+                        <th>
+                            Email
+                        </th>
+
+
+                        <th>
+                            Response
+                        </th>
+
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+
+                <tbody>
+
+
+                    {% for response in responses %}
+
+
+                    <tr>
+
+
+                        <!--
+                        IMPORTANT:
+
+                        response[0] = actual database ID
+
+                        loop.index = displayed ID
+
+                        We display loop.index so the
+                        numbers always remain 1,2,3...
+                        -->
+
+                        <td>
+
+                            <span class="serial-number">
+
+                                {{ loop.index }}
+
+                            </span>
+
+                        </td>
+
+
+
+                        <td>
+
+                            {{ response[1] }}
+
+                        </td>
+
+
+
+                        <td>
+
+                            {{ response[2] }}
+
+                        </td>
+
+
+
+                        <td>
+
+                            {{ response[3] }}
+
+                        </td>
+
+
+
+                        <td>
+
+
+                            <!--
+                            IMPORTANT:
+
+                            We still use response[0]
+                            internally for deletion.
+
+                            This is the REAL database ID.
+                            -->
+
+                            <form
+
+                                action="{{ url_for(
+                                    'delete_response',
+                                    response_id=response[0]
+                                ) }}"
+
+                                method="POST"
+
+                                onsubmit="
+                                    return confirm(
+                                        'Are you sure you want to delete this response?'
+                                    );
+                                "
+                            >
+
+
+                                <button
+
+                                    type="submit"
+
+                                    class="delete-button"
+
+                                >
+
+                                    🗑 Delete
+
+                                </button>
+
+
+                            </form>
+
+
+                        </td>
+
+
+                    </tr>
+
+
+                    {% endfor %}
+
+
+                </tbody>
+
+
+            </table>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             ACTION BUTTONS
+        ================================= -->
+
+        <div class="response-actions">
+
+
+            <a
+
+                href="/"
+
+                class="primary-button"
+
+            >
+
+                ← Back to Website
+
+            </a>
+
+
+
+            <form
+
+                action="/delete-all"
+
+                method="POST"
+
+                onsubmit="
+                    return confirm(
+                        'Are you sure you want to delete ALL responses? This cannot be undone.'
+                    );
+                "
+
+            >
+
+
+                <button
+
+                    type="submit"
+
+                    class="delete-all-button"
+
+                >
+
+                    🗑 Delete All Responses
+
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+
+
+        {% else %}
+
+
+        <!-- =================================
+             EMPTY DATABASE
+        ================================= -->
+
+        <div class="response-table-container">
+
+
+            <div class="empty-message">
+
+                📭 No responses have been submitted yet.
+
+            </div>
+
+
+        </div>
+
+
+
+        <div style="
+            text-align:center;
+            margin-top:35px;
+        ">
+
+
+            <a
+
+                href="/"
+
+                class="primary-button"
+
+            >
+
+                ← Back to Website
+
+            </a>
+
+
+        </div>
+
+
+        {% endif %}
+
+
+    </section>
+
+
+</body>
+
+</html>

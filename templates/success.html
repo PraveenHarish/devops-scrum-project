@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Response Submitted</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div style="
+        min-height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:20px;
+    ">
+
+        <div style="
+            max-width:600px;
+            width:100%;
+            text-align:center;
+            padding:50px 30px;
+            background:#0f172a;
+            border:1px solid #1e293b;
+            border-radius:20px;
+        ">
+
+            <div style="
+                font-size:60px;
+                margin-bottom:20px;
+            ">
+                ✓
+            </div>
+
+            <h1 style="margin-bottom:15px;">
+                Response Submitted!
+            </h1>
+
+            <p style="
+                color:#94a3b8;
+                margin-bottom:30px;
+            ">
+                Thank you for submitting your response.
+                Your information has been successfully stored.
+            </p>
+
+            <a href="/" class="primary-button">
+                ← Back to Website
+            </a>
+
+            <br><br>
+
+            <a href="/responses"
+               style="color:#38bdf8;text-decoration:none;">
+                View Stored Responses
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
